@@ -7,28 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div  class="logo">
-            <a href="index.html">Dev<span class="span">Zero</span></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="project.html">Projects</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <input type="checkbox" id="toggle" />
+			
+			<nav>
+				<a href="index.html" class="logo">Dev<span class="span">Zero</span></a>
+
+						<label class="navbar-toggle" for="toggle">
+							<span class="bar"></span>
+							<span class="bar"></span>
+							<span class="bar"></span>
+						</label>
+
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html" class="active">About</a></li>
+					<li><a href="project.html">Projects</a></li>
+					<li><a href="services.html">Services</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</nav>
     <main>
         <div class="profile-img">
-            <img src="images/pic_profile.jpg" alt="" width="400px" height="400px">
+            <img src="images/pic_profile.jpg" alt="" />
         </div>
         <div class="content">
         <h1>Hi! I'm Lorenzo</h1>
         <h3>About Page</h3>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum in exercitationem accusantium doloremque alias, quod ipsam vel eum! Voluptatem, cum.</p>
+        <strong class="blink">This website is under development!</strong>
         <div><button class="btn">Hire me</button></div>
     </div>
     </main>
