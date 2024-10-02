@@ -3,21 +3,37 @@
 	margin: 0;
 	padding: 0;
 }
-header {
+body {
+	position: relative;
+	scroll-behavior: smooth;
+}
+main {
+	background: linear-gradient(-90deg, yellow 75%, black 25%);
+	background-size: cover;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	top: 10px;
+}
+input {
+	display: none;
+}
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	top: 8px;
 	position: fixed;
 	width: 100%;
+	right: 0;
 }
-.span {
+.logo .span {
 	color: white;
 	font-weight: bold;
 	text-transform: uppercase;
 }
-.logo a {
-	font-size: 30px;
+.logo {
+	font-size: 25px;
 	text-decoration: none;
 	font-weight: bold;
 	color: yellow;
@@ -31,7 +47,7 @@ nav ul li {
 }
 nav ul li a {
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 600;
 	font-family: Arial, Helvetica, sans-serif;
 	display: inline-block;
@@ -47,7 +63,7 @@ nav ul li a:hover,
 .active {
 	color: blue;
 	width: max-content;
-	border-bottom: 3px solid blue;
+	border-bottom: 4px solid blue;
 }
 nav ul li a::before {
 	position: absolute;
@@ -62,14 +78,6 @@ nav ul li a::before {
 nav ul li a:hover::before {
 	width: 100%;
 }
-main {
-	height: 100vh;
-	background: linear-gradient(-90deg, yellow 65%, black 35%);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 10%;
-}
 .profile-img {
 	background-color: yellow;
 	border: 30px solid black;
@@ -79,47 +87,47 @@ main {
 	align-items: center;
 }
 img {
+	width: 380px;
+	height: 380px;
 	border-radius: 50%;
 }
 .content {
 	max-width: 600px;
 	color: black;
 	line-height: 1.5;
+	margin: 20px auto;
+	padding: 10px;
+	text-align: center;
 }
 .content h1 {
-	font-size: 50px;
-	text-align: center;
+	font-size: 40px;
 }
 .content h3 {
 	font-size: 40px;
-	text-align: center;
+	color: blue;
 }
 .content p {
-	font-size: 18px;
+	font-size: 16px;
+	font-weight: 500;
 	margin-top: 20px;
-	text-align: center;
 	letter-spacing: 2px;
 }
 .wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	font-size: 50px;
 }
 .wrapper .static-txt {
 	color: black;
-	font-size: 60px;
 	font-weight: 400;
 	position: relative;
 }
 .wrapper .dynamic-txts {
-	height: 90px;
 	margin-left: 15px;
+	height: 90px;
 	line-height: 90px;
 	overflow: hidden;
 }
 .dynamic-txts li {
 	list-style: none;
-	font-size: 60px;
 	font-weight: 500;
 	color: blue;
 	position: relative;
@@ -150,20 +158,18 @@ img {
 		margin: 0 -35px 0 35px;
 	}
 }
-strong {
+.blink {
 	display: flex;
 	justify-content: center;
-	font-size: 25px;
 	font-family: monospace;
 	margin-top: 20px;
-	color: red;
-	-webkit-text-stroke: 1px black;
+	text-align: center;
 }
 .blink {
 	animation: blink-animation 1s steps(5, start) infinite;
 	color: red; /* You can change the color if you like */
-	font-size: 24px; /* Adjust the font size as needed */
-	font-weight: bold;
+	font-size: 20px; /* Adjust the font size as needed */
+	font-weight: 500;
 }
 
 /* Keyframes for the blink animation */
@@ -174,15 +180,166 @@ strong {
 }
 
 .btn {
-	display: flex;
-	margin: 20px auto;
-	font-size: 20px;
+	margin: 20px;
+	font-size: 16px;
 	font-weight: 600;
 	background-color: yellow;
 	color: black;
-	border: 3px solid black;
+	border: 2px solid black;
 	border-radius: 40px;
 	padding: 5px 10px;
 	text-transform: uppercase;
 	cursor: pointer;
+}
+.footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 20px;
+	font-size: 20px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: max-content;
+	text-transform: uppercase;
+}
+.footer .span {
+	color: yellow;
+	text-transform: capitalize;
+}
+
+/* tablet version */
+@media (max-width: 950px) {
+	main {
+		background: linear-gradient(-90deg, yellow 78%, black 22%);
+	}
+	nav .logo {
+		font-size: 22px;
+		margin-left: 30px;
+	}
+	nav ul li a {
+		font-size: 16px;
+	}
+	.content h1 {
+		font-size: 30px;
+	}
+	.content h3 {
+		font-size: 35px;
+	}
+	.content p {
+		font-size: 15px;
+	}
+	.wrapper .static-txt {
+		font-size: 45px;
+	}
+	.dynamic-txts li {
+		font-size: 45px;
+	}
+	img {
+		width: 350px;
+		height: 350px;
+	}
+	.profile-img {
+		border: 25px solid black;
+	}
+	.blink {
+		font-size: 20px;
+	}
+	.btn {
+		font-size: 15px;
+	}
+	.footer {
+		font-size: 18px;
+	}
+}
+
+/* mobile version */
+@media (max-width: 730px) {
+	main,
+	body {
+		display: block;
+		background: yellow;
+		height: 100vh;
+	}
+	.logo {
+		font-size: 25px;
+		margin-left: 15px;
+	}
+	.profile-img {
+		border: none;
+		margin-top: 60px;
+	}
+	img {
+		height: 250px;
+		width: 250px;
+		border: 6px solid blue;
+	}
+	.content {
+		height: 70vh;
+	}
+	nav {
+		background: black;
+		top: 0;
+		height: 6%;
+	}
+	nav ul {
+		display: grid;
+		background: transparent;
+		position: absolute;
+		width: 180px;
+		background: transparent;
+		transform: translatex(260px);
+		z-index: -1;
+		transition: 0.6s;
+		top: 40px;
+		right: -3%;
+	}
+	/* nav ul li:hover,
+	.active {
+		border-bottom: none;
+	} */
+	nav ul li {
+		text-align: center;
+	}
+	nav ul li a {
+		color: black;
+	}
+	nav ul li a::before {
+		background: none;
+	}
+
+	nav .navbar-toggle {
+		display: grid !important;
+	}
+
+	/*This is for toggle section css*/
+	nav .navbar-toggle {
+		display: none;
+		height: min-content;
+		cursor: pointer;
+	}
+	nav .navbar-toggle .bar {
+		width: 30px;
+		height: 3px;
+		margin: 5px 12px 0px 40px;
+		background: white;
+		border-radius: 12%;
+		transition: 0.4s;
+	}
+	input:checked ~ nav ul {
+		transform: translateY(0);
+	}
+	input:checked ~ nav .navbar-toggle .bar:nth-child(1) {
+		position: absolute;
+		transform: rotate(45deg);
+	}
+	input:checked ~ nav .navbar-toggle .bar:nth-child(2) {
+		display: none;
+	}
+	input:checked ~ nav .navbar-toggle .bar:nth-child(3) {
+		transform: rotate(-45deg);
+	}
+	.footer {
+		font-size: 16px;
+	}
 }
