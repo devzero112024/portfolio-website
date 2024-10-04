@@ -22,10 +22,13 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background: #000;
 	top: 8px;
 	position: fixed;
 	width: 100%;
-	right: 0;
+	height: 8%;
+	top: 0;
+	z-index: 1;
 }
 .logo .span {
 	color: white;
@@ -52,32 +55,31 @@ nav ul li a {
 	font-family: Arial, Helvetica, sans-serif;
 	display: inline-block;
 	margin: auto 20px;
-	width: max-content;
-	color: black;
+	width: 100%;
+	color: yellow;
 	padding: 10px;
 	position: relative;
 	align-items: center;
 	justify-content: center;
+	border-radius: 3px;
 }
 nav ul li a:hover,
-.active {
+.active{
 	color: blue;
-	width: max-content;
-	border-bottom: 4px solid blue;
 }
-nav ul li a::before {
+/* nav ul li a::before {
 	position: absolute;
 	content: "";
 	top: 0;
 	right: 0;
 	width: 0%;
-	background-color: blue;
+	background-color: black;
 	height: 3px;
 	transition: 0.2s ease-out;
 }
 nav ul li a:hover::before {
 	width: 100%;
-}
+} */
 .profile-img {
 	background-color: yellow;
 	border: 30px solid black;
@@ -100,7 +102,7 @@ img {
 	text-align: center;
 }
 .content h1 {
-	font-size: 40px;
+	font-size: 38px;
 }
 .content h3 {
 	font-size: 40px;
@@ -207,6 +209,21 @@ img {
 	color: yellow;
 	text-transform: capitalize;
 }
+form input{
+	height: 30px;
+}
+form textarea{
+	height: 50px;
+}
+form input,
+form textarea{
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;	
+	border: none;
+	background-color: #f7f7f7;
+	color: #333;
+}
 
 /* tablet version */
 @media (max-width: 950px) {
@@ -221,7 +238,7 @@ img {
 		font-size: 16px;
 	}
 	.content h1 {
-		font-size: 30px;
+		font-size: 32px;
 	}
 	.content h3 {
 		font-size: 35px;
@@ -254,16 +271,48 @@ img {
 }
 
 /* mobile version */
-@media (max-width: 730px) {
+@media (max-width: 720px) {
 	main,
 	body {
 		display: block;
 		background: yellow;
 		height: 100vh;
 	}
-	.logo {
-		font-size: 25px;
+	nav .logo {
+		font-size: 18px;
 		margin-left: 15px;
+	}
+	nav {
+		background: black;
+		top: 0;
+		height: 6%;
+		padding: 10px;
+	}
+	nav ul {
+		display: grid;
+		background: transparent;
+		position: absolute;
+		width: 100%;
+		background: #282828;
+		border-bottom-left-radius: 3px;
+		transform: translateY(-400px);
+		transition: 0.6s;
+		top: 47px;
+		left: 0;
+	}
+	nav ul li {
+		font-size: 14px;
+		width: 100%;
+		margin: auto 0;
+		text-align: center;
+	}
+	nav ul li a {
+		/* padding: 12px; */
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+	nav .navbar-toggle {
+		display: grid !important;
 	}
 	.profile-img {
 		border: none;
@@ -275,41 +324,28 @@ img {
 		border: 6px solid blue;
 	}
 	.content {
-		height: 70vh;
+		height: 100vh;
 	}
-	nav {
-		background: black;
-		top: 0;
-		height: 6%;
+	.content h1 {
+		font-size: 28px;
 	}
-	nav ul {
-		display: grid;
-		background: transparent;
-		position: absolute;
-		width: 180px;
-		background: transparent;
-		transform: translatex(260px);
-		z-index: -1;
-		transition: 0.6s;
-		top: 40px;
-		right: -3%;
+	.content h3 {
+		font-size: 30px;
 	}
-	/* nav ul li:hover,
-	.active {
-		border-bottom: none;
-	} */
-	nav ul li {
-		text-align: center;
+	.content p {
+		font-size: 14px;
 	}
-	nav ul li a {
-		color: black;
+	.wrapper .static-txt {
+		font-size: 40px;
 	}
-	nav ul li a::before {
-		background: none;
+	.dynamic-txts li {
+		font-size: 40px;
 	}
-
-	nav .navbar-toggle {
-		display: grid !important;
+	.blink {
+		font-size: 20px;
+	}
+	.btn {
+		font-size: 15px;
 	}
 
 	/*This is for toggle section css*/
@@ -321,7 +357,7 @@ img {
 	nav .navbar-toggle .bar {
 		width: 30px;
 		height: 3px;
-		margin: 5px 12px 0px 40px;
+		margin: 3px 1px 5px 40px;
 		background: white;
 		border-radius: 12%;
 		transition: 0.4s;
